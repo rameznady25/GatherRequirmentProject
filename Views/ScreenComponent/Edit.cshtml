@@ -1,0 +1,544 @@
+﻿@model Gather_Requirement_Project.Models.ScreenComponent
+
+@{
+    ViewData["Title"] = "Edit";
+    SelectList screenList = new SelectList(ViewBag.screenList, "ID", "ScreenName", ViewBag.screenList);
+    SelectList InputList = new SelectList(ViewBag.inputTypesList, "ID", "Name");
+    SelectList FieldList = new SelectList(ViewBag.fieldTypesList, "ID", "Name");
+    SelectList ScreenComponentList1 = new SelectList(ViewBag.screenComponentList1, "ID", "FieldNameEnglish");
+    SelectList ScreenComponentList2 = new SelectList(ViewBag.screenComponentList2, "ID", "FieldNameEnglish");
+    if (Model.ScreenComponentID == null)
+    {
+        Model.ScreenComponentID = 0;
+    }
+    if (Model.ValidationEqualID == null)
+    {
+        Model.ValidationEqualID = 0;
+    }
+    if (Model.ValidationGreaterthanID == null)
+    {
+        Model.ValidationGreaterthanID = 0;
+    }
+    if (Model.ValidationLessthanID == null)
+    {
+        Model.ValidationLessthanID = 0;
+    }
+}
+
+<div class="container-fluid">
+
+    <div class="card ">
+        <div class="card-header">
+            <h4>  <i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp&nbsp Edit Screen Component</h4>
+        </div>
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+
+                </div>
+                <div class="col-md-2">
+                    @*asp-route-screenId="@Model.ScreenID"*@
+                    <a asp-action="Index" asp-route-screenId="@Model.ScreenID">Go to Back</a>
+                </div>
+            </div>
+            <hr />
+
+
+            <form asp-action="Edit" asp-controller="ScreenComponent" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <div>
+                        <label class="form-label-group control-label" asp-for="ScreenID"><b>Screen Name</b></label> <br />
+                        <select asp-for="ScreenID" class="form-control" asp-items="screenList" id="List" hidden></select>
+                        <label id="lbl" class="form-label-group"></label>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="form-group   col-md-3 ">
+                            <label asp-for="FieldNameEnglish" class="control-label form-label-group"><b>Name In English</b></label>
+                            <input asp-for="FieldNameEnglish" class="form-control" />
+                            <span asp-validation-for="FieldNameEnglish" class="text-danger"></span>
+                        </div>
+                        <div class="form-group   col-md-3 ">
+                            <label asp-for="FielNameArabic" class="control-label"><b>Name In Arabic</b></label>
+                            <input asp-for="FielNameArabic" class="form-control" />
+                            <span asp-validation-for="FielNameArabic" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group   col-md-3 ">
+                            <div>
+                                <label class="form-label-group control-label" asp-for="InputtypeID"><b>Input Type</b></label>
+                                <select asp-for="InputtypeID" class="form-control" asp-items="InputList"></select>
+                            </div>
+                        </div>
+                        <div class="form-group   col-md-3 ">
+                            <div>
+                                <label class="form-label-group control-label" asp-for="FieldTypeID"><b>Field Type</b></label>
+                                <select asp-for="FieldTypeID" class="form-control" asp-items="FieldList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+                        <div class="form-group   col-md-4 ">
+                            <div class="form-group">
+                                <label asp-for="ServiceNameForDropdown" class="control-label form-label-group"><b>Service Name For Dropdown</b></label>
+                                <input asp-for="ServiceNameForDropdown" class="form-control" />
+                                <span asp-validation-for="ServiceNameForDropdown" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group   col-md-4 ">
+                            <div class="form-group custom-control custom-checkbox">
+                                <input asp-for="Visible" type="checkbox" class="custom-control-input " id="Visiblechecked" checked="checked">
+                                <label asp-for="Visible" class="custom-control-label" for="Visiblechecked"><b>Visible</b></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group   col-md-4 ">
+                            <div class="form-group custom-control custom-checkbox">
+                                <input asp-for="Readonly" type="checkbox" class="custom-control-input " id="Readonlychecked">
+                                <label asp-for="Readonly" class="custom-control-label" for="Readonlychecked"><b>Readonly</b></label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="form-group   col-md-4 ">
+                            <div>
+                                <label asp-for="DefaultValue" class="control-label form-label-group"><b>Default Value</b></label>
+                                <input asp-for="DefaultValue" class="form-control" />
+                                <span asp-validation-for="DefaultValue" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group   col-md-4 ">
+                            <div>
+                                <label class="form-label-group control-label" asp-for="ScreenComponentID"><b>DropDown Depend on : </b></label>
+                                <select id="load1" asp-for="ScreenComponentID" class="form-control">
+                                    <option disabled selected>--- SELECT ---</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group   col-md-4 ">
+                            <div class="form-group custom-control custom-checkbox">
+                                <label asp-for="Values" class="control-label form-label-group"><b>Values in Dropdown Depend on:</b></label>
+                                <input asp-for="Values" class="form-control" />
+                                <span asp-validation-for="Values" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                    <hr />
+                    <center><b>Validations </b></center> <br />
+                    <div class="row">
+                        <div class="form-group   col-md-6 ">
+                            <div class="form-group custom-control custom-checkbox">
+                                <input asp-for="ValidationRequired" type="checkbox" class="custom-control-input " id="defaultUnchecked">
+                                <label asp-for="ValidationRequired" class="custom-control-label" for="defaultUnchecked"><b>Required</b></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group   col-md-6 ">
+                            <label asp-for="ValidationRequiredMessage" class="control-label"><b>Message</b></label>
+                            <input asp-for="ValidationRequiredMessage" class="form-control"/>
+                            <span asp-validation-for="ValidationRequiredMessage" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group   col-md-6 ">
+                            <label asp-for="ValidationMin" class="control-label col-md-6"> <b>MinLength</b></label>
+                            <input asp-for="ValidationMin" class="form-control" />
+                            <span asp-validation-for="ValidationMin" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group  col-md-6">
+                            <label asp-for="ValidationMinMessage" class="control-label col-md-4"><b>Message</b></label>
+                            <input asp-for="ValidationMinMessage" class="form-control" />
+                            <span asp-validation-for="ValidationMinMessage" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group   col-md-6 ">
+                            <label asp-for="ValidationMax" class="control-label col-md-6"><b>MaxLength</b></label>
+                            <input asp-for="ValidationMax" class="form-control" />
+                            <span asp-validation-for="ValidationMax" class="text-danger col-md-6"></span>
+                        </div>
+
+                        <div class="form-group   col-md-6 ">
+                            <label asp-for="ValidationMaxMessage" class="control-label col-md-4"><b>Message</b></label>
+                            <input asp-for="ValidationMaxMessage" class="form-control" />
+                            <span asp-validation-for="ValidationMaxMessage" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group   col-md-6 ">
+                            <div>
+                                <label class="form-label-group control-label" asp-for="ValidationEqualID"><b>Equal To : </b></label>
+                                <select asp-for="ValidationEqualID" class="form-control" id="load2">
+                                    <option disabled selected>--- SELECT ---</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group   col-md-6 ">
+                            <label asp-for="ValidationEqualMessage" class="control-label col-md-4"><b>Message</b></label>
+                            <input asp-for="ValidationEqualMessage" class="form-control" />
+                            <span asp-validation-for="ValidationEqualMessage" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group   col-md-6 ">
+                            <div>
+                                <label class="form-label-group control-label" asp-for="ValidationLessthanID"><b>Less Than : </b></label>
+                                <select id="load3" asp-for="ValidationLessthanID" class="form-control">
+                                    <option disabled selected>--- SELECT ---</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group   col-md-6 ">
+                            <label asp-for="ValidationLessthanMessage" class="control-label col-md-4"><b>Message</b></label>
+                            <input asp-for="ValidationLessthanMessage" class="form-control" />
+                            <span asp-validation-for="ValidationLessthanMessage" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group   col-md-6 ">
+                            <div>
+                                <label class="form-label-group control-label" asp-for="ValidationGreaterthanID"><b>Greater Than : </b></label>
+                                <select id="load4" asp-for="ValidationGreaterthanID" class="form-control">
+                                    <option disabled selected>--- SELECT ---</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group   col-md-6 ">
+                            <label asp-for="ValidationGreaterthanMessage" class="control-label col-md-4"><b>Message</b></label>
+                            <input asp-for="ValidationGreaterthanMessage" class="form-control" />
+                            <span asp-validation-for="ValidationGreaterthanMessage" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <br />
+                <div class="col-md-12">
+                    <div class="form-label-group" style="float:left;margin-top:3px">
+                        <input type="submit" value="Submit" class="btn btn-primary font-weight-bold" />
+                    </div>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+<script>
+            $(document).ready(function ()
+            {
+                //alert("Start");
+        $("#lbl").empty();
+        $("#lbl").append( ($("#List").children("option:selected").text()) );
+
+                   if ($("#List").val() != "Please select") {
+                        var options = {};
+                        options.url = "/ScreenComponent/LoadDropDown/"+$("#List").val();
+                        options.type = "GET";
+                        options.contentType = "application/json";
+                        options.success = function (states) {
+                            $("#load1").empty();
+                            $("#load1").append("<option selected>--- SELECT ---</option>");
+
+                            for (var i = 0; i < states.length; i += 2) {
+                                if (@Model.ScreenComponentID != 0)
+                                {
+                                    if (@Model.ScreenComponentID.ToString() == states[i])
+                                        $("#load1").append("<option selected value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                    else
+                                        $("#load1").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                                else
+                                {
+                                    $("#load1").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                            }
+                            $("#load1").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load1").empty();
+                        $("#load1").prop("disabled", true);
+                }
+
+
+
+                   if ($("#List").val() != "Please select") {
+                        var options = {};
+                        options.url = "/ScreenComponent/LoadOther/"+$("#List").val();
+                        options.type = "GET";
+                        options.contentType = "application/json";
+                        options.success = function (states) {
+                            $("#load2").empty();
+                            $("#load2").append("<option selected>--- SELECT ---</option>");
+
+                            for (var i = 0; i < states.length; i += 2) {
+                                if (@Model.ValidationEqualID != 0)
+                                {
+                                    if (@Model.ValidationEqualID.ToString() == states[i])
+                                        $("#load2").append("<option selected value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                    else
+                                        $("#load2").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                                else
+                                {
+                                    $("#load2").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                            }
+                            $("#load2").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load2").empty();
+                        $("#load2").prop("disabled", true);
+                }
+
+
+
+                if ($("#List").val() != "Please select") {
+                        var options = {};
+                        options.url = "/ScreenComponent/LoadOther/"+$("#List").val();
+                        options.type = "GET";
+                        options.contentType = "application/json";
+                        options.success = function (states) {
+                            $("#load3").empty();
+                            $("#load3").append("<option selected>--- SELECT ---</option>");
+
+                            for (var i = 0; i < states.length; i += 2) {
+                                if (@Model.ValidationLessthanID != 0)
+                                {
+                                    if (@Model.ValidationLessthanID.ToString() == states[i])
+                                        $("#load3").append("<option selected value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                    else
+                                        $("#load3").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                                else
+                                {
+                                    $("#load3").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                            }
+                            $("#load3").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load3").empty();
+                        $("#load3").prop("disabled", true);
+                }
+
+                if ($("#List").val() != "Please select") {
+                        var options = {};
+                        options.url = "/ScreenComponent/LoadOther/"+$("#List").val();
+                        options.type = "GET";
+                        options.contentType = "application/json";
+                        options.success = function (states) {
+                            $("#load4").empty();
+                            $("#load4").append("<option selected>--- SELECT ---</option>");
+
+                            for (var i = 0; i < states.length; i += 2) {
+                                if (@Model.ValidationGreaterthanID != 0)
+                                {
+                                    if (@Model.ValidationGreaterthanID.ToString() == states[i])
+                                        $("#load4").append("<option selected value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                    else
+                                        $("#load4").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                                else
+                                {
+                                    $("#load4").append("<option value= " + states[i] + ">" + states[i + 1] + "</option>");
+                                }
+                            }
+                            $("#load4").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load4").empty();
+                        $("#load4").prop("disabled", true);
+                }
+
+
+
+
+                $("#List").change(function () {
+                    if ($("#List").val() != "Please select") {
+                        var options = {};
+                        //alert($("#List").val());
+                        options.url = "/ScreenComponent/LoadDropDown/"+$("#List").val();
+                        options.type = "GET";
+                        //options.data = $("#List").val();
+                        //options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (states1) {
+                            $("#load1").empty();
+                            $("#load1").append("<option selected>--- SELECT ---</option>");
+
+                            for (var i = 0; i < states1.length; i+=2) {
+                                $("#load1").append("<option value= " + states1[i] + ">" + states1[i+1] + "</option>");
+                            }
+                            $("#load1").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load1").empty();
+                        $("#load1").prop("disabled", true);
+                    }
+                });
+                $("#List").change(function () {
+                    if ($("#List").val() != "Please select") {
+                        var options = {};
+                        //alert($("#List").val());
+                        options.url = "/ScreenComponent/LoadOther/"+$("#List").val();
+                        options.type = "GET";
+                        //options.data = $("#List").val();
+                        //options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (states2) {
+                            $("#load2").empty();
+                            $("#load2").append("<option selected>--- SELECT ---</option>");
+
+                            for (var i = 0; i < states2.length; i+=2) {
+                                $("#load2").append("<option value= " + states2[i] + ">" + states2[i+1] + "</option>");
+                            }
+                            $("#load2").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load2").empty();
+                        $("#load2").prop("disabled", true);
+                    }
+                });
+                $("#List").change(function () {
+                    if ($("#List").val() != "Please select") {
+                        var options = {};
+                        //alert($("#List").val());
+                        options.url = "/ScreenComponent/LoadOther/"+$("#List").val();
+                        options.type = "GET";
+                        //options.data = $("#List").val();
+                        //options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (states3) {
+                            $("#load3").empty();
+                            $("#load3").append("<option selected>--- SELECT ---</option>");
+                            for (var i = 0; i < states3.length; i+=2) {
+                                $("#load3").append("<option value= " + states3[i] + ">" + states3[i+1] + "</option>");
+                            }
+                            $("#load3").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load3").empty();
+                        $("#load3").prop("disabled", true);
+                    }
+                });
+                $("#List").change(function () {
+                    if ($("#List").val() != "Please select") {
+                        var options = {};
+                        //alert($("#List").val());
+                        options.url = "/ScreenComponent/LoadOther/"+$("#List").val();
+                        options.type = "GET";
+                        //options.data = $("#List").val();
+                        //options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (states4) {
+                            $("#load4").empty();
+                             $("#load4").append("<option selected>--- SELECT ---</option>");
+                            for (var i = 0; i < states4.length; i+=2) {
+                                $("#load4").append("<option value= " + states4[i] + ">" + states4[i+1] + "</option>");
+                            }
+                            $("#load4").prop("disabled", false);
+                        };
+                        options.error = function () { alert("Error retrieving states!"); };
+                        $.ajax(options);
+                    }
+                    else {
+                        $("#load4").empty();
+                        $("#load4").prop("disabled", true);
+                    }
+                });
+
+
+
+    });
+</script>

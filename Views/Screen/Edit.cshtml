@@ -1,0 +1,209 @@
+﻿@model Gather_Requirement_Project.Models.Screen
+
+@{
+    ViewData["Title"] = "Edit";
+
+    SelectList ScreentTypeList = new SelectList(ViewBag.screenTypesList, "ID", "Name", ViewBag.screenTypesList);
+
+    SelectList ModulesList = new SelectList(ViewBag.modules, "ID", "EnglishNameInSingle", ViewBag.modules);
+}
+
+<div class="container-fluid" id="page-top">
+    <div class="card ">
+        <div class="card-header">
+            <h4>  <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp Edit Screen </h4>
+        </div>
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+
+                </div>
+                <div class="col-md-2">
+                    <a asp-action="Index" asp-route-modulId="@Model.ModuleID" >Go to Back</a>
+                </div>
+            </div>
+            <hr />
+            <div class="text-md-left row">
+
+                <form asp-action="Edit" asp-controller="Screen" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ID" />
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div>
+
+                                    <label asp-for="ScreenName" class="control-label"><b>Screen Name</b></label>
+                                    <input asp-for="ScreenName" class="form-control" />
+                                    <span asp-validation-for="ScreenName" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div>
+
+                                    <label asp-for="ScreenNameArabic" class="control-label"><b>Screen Name Arabic</b></label>
+                                    <input asp-for="ScreenNameArabic" class="form-control" />
+                                    <span asp-validation-for="ScreenNameArabic" class="text-danger"></span>
+                                </div>
+                            </div>
+                            @*<div class="col-md-6">
+            <div>
+                @Html.LabelFor(model => model.CustomerProgramID, "Program For This Screen ")
+                <div class="col-md-12">
+                    @foreach (var item in ViewBag.programList)
+                    {
+                        if (item.ID == Model.CustomerProgramID)
+                        {
+                            @Html.DropDownList("CustomerProgramID", ProgramList)
+
+                        }
+
+                    }
+
+                </div>
+            </div>
+        </div>*@
+
+                            <div class="col-md-6">
+                                <div>
+                                    <label class="form-label-group" asp-for="ModuleID"><b>Module</b></label><br />
+                                    <select id="sel" hidden asp-for="ModuleID" class="form-control" asp-items="ModulesList"></select>
+                                    <label id="lbl" class="form-label-group"></label>
+                                </div>
+                            </div>
+
+                            @*<div class="col-md-6">
+            <div>
+                @Html.LabelFor(model => model.screenTypeID, "Screen Type")
+                <div class="col-md-2">
+                    @foreach (var item in ViewBag.screenTypesList)
+                    {
+                        if (item.ID == Model.screenTypeID)
+                        {
+                            @Html.DropDownList("ScreenTypeID", ScreentTypeList)
+
+                        }
+
+                    }
+
+                </div>
+            </div>
+        </div>*@
+
+                            <div class="col-md-6">
+                                <div>
+                                    <label class="form-label-group" asp-for="screenTypeID"><b>Screen Type</b></label>
+                                    <select asp-for="screenTypeID" class="form-control" asp-items="ScreentTypeList"></select>
+                                </div>
+                            </div>
+
+
+
+
+                            @*<div class="col-md-6">
+            <div>
+                <label asp-for="ScreenGoal" class="control-label"><b>Screen Goal</b></label>
+                <input asp-for="ScreenGoal" class="form-control" />
+                <span asp-validation-for="ScreenGoal" class="text-danger"></span>
+            </div>
+        </div>*@
+
+                            <div class="col-md-6">
+                                <div>
+                                    <label asp-for="EmpName" class="control-label"><b>Employee Name</b></label>
+                                    <input asp-for="EmpName" class="form-control" />
+                                    <span asp-validation-for="EmpName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <label asp-for="EmpJob" class="control-label"><b>Employee Job</b></label>
+                                    <input asp-for="EmpJob" class="form-control" />
+                                    <span asp-validation-for="EmpJob" class="text-danger"></span>
+                                </div>
+                            </div>
+                            @*<div class="col-md-6">
+                                <div>
+                                    <label asp-for="DevName" class="control-label"><b>Developer Name</b></label>
+                                    <input asp-for="DevName" class="form-control" />
+                                    <span asp-validation-for="DevName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <label asp-for="Date" class="control-label"><b>Date</b></label>
+                                    <input asp-for="Date" class="form-control" />
+                                    <span asp-validation-for="Date" class="text-danger"></span>
+                                </div>
+                            </div>*@
+                            @*<div class="col-md-6">
+           <div>
+                <label asp-for="Criteria" class="control-label"><b>Criteria</b></label>
+                <textarea asp-for="Criteria" class="form-control" cols="5" rows="10"></textarea>
+                <span asp-validation-for="Criteria" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <label asp-for="PreCondition" class="control-label"><b>PreCondition</b></label>
+                <textarea asp-for="PreCondition" class="form-control" cols="5" rows="10"></textarea>
+                <span asp-validation-for="PreCondition" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div>
+                <label asp-for="DoSceniro" class="control-label"><b>Sceniro</b></label>
+                <textarea asp-for="DoSceniro" class="form-control" cols="5" rows="10"></textarea>
+                <span asp-validation-for="DoSceniro" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <label asp-for="ExpectedResult" class="control-label"> <b>Expected Result</b></label>
+                <textarea asp-for="ExpectedResult" class="form-control" cols="5" rows="10"></textarea>
+                <span asp-validation-for="ExpectedResult" class="text-danger"></span>
+            </div>
+        </div>*@
+                            <br />
+                            <div class="col-md-6">
+                                <div>
+                                    <label class="form-label-group"><b>Upload Image</b></label>
+                                    <label class="control-label">:  @Model.ImageName</label>
+                                    <input class="form-control" type="file" asp-for="ImageFile" />
+                                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12" style="margin-top:15px">
+                                <div class="form-label-group" style="float:left">
+                                    <input type="submit" value="Save Changes" class="btn btn-primary" />
+                                </div>
+                            </div>
+
+
+</form>
+            </div>
+        </div>
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    $(document).ready(function () {
+        $("#lbl").empty();
+        $("#lbl").append( ($("#sel").children("option:selected").text()) );
+    });
+</script>

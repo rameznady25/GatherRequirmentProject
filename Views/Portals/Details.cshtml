@@ -1,0 +1,47 @@
+﻿@model Gather_Requirement_Project.Models.Portal
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp Portal </h4>
+        </div>
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+                    <a asp-action="Edit" asp-route-id="@Model.ID">Edit Portal</a>
+
+                </div>
+                <div class="col-md-2">
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.EnglishName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.EnglishName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ArabicName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ArabicName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.MainPortal)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.MainPortal.ArabicName)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+﻿@model Gather_Requirement_Project.Models.ScreenComponent
+
+@{
+    ViewData["Title"] = "Details";
+
+    var ScreenComponentDepend = ViewBag.ScreenComponentDepend;
+
+    //SelectList ValidationList = new SelectList(ViewBag.screencomValidations, "FieldValidationID", "ScreenComponentID");
+
+}
+<div class="container-fluid mt-5">
+    <div class="card mb-3  border">
+
+        <div class="row card-header">
+            <div class="col-md-10">
+                <h4>  <i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp&nbsp Details of Screen Component </h4>
+            </div>
+            <div class="col-md-2">
+                <a asp-action="Index" asp-route-screenId="@Model.ScreenID">Go to Back</a>
+            </div>
+        </div>
+
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+
+                </div>
+
+                <div class="col-md-2">
+                    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+
+                </div>
+            </div>
+            <hr />
+
+            <dl class="text-md-left   table-bordered table-hover row">
+                <dt class="col-sm-3">
+                    <spn>Screen Name</spn>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Screen.ScreenName)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span>Name In English </span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FieldNameEnglish)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span> Name In Arabic</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FielNameArabic)
+                </dd>
+
+
+
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.InputType.Name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.InputType.Name)
+                </dd>
+
+
+
+
+
+                <dt class="col-sm-3">
+                    <spn>Service Name For Dropdown</spn>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServiceNameForDropdown)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <spn>Component Depend on</spn>
+                </dt>
+                <dd class="col-sm-9">
+                    @ScreenComponentDepend
+                </dd>
+
+                <dt class="col-sm-3">
+                    <spn>Field Type</spn>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FieldType.Name)
+                </dd>
+
+
+
+
+
+
+
+
+                <dt class="col-sm-3">
+                    <span> Required </span>
+                </dt>
+                <dd class="col-sm-9" type="checkbox">
+                    @Html.DisplayFor(model => model.ValidationRequired)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span> Message For Required Validation </span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ValidationRequiredMessage)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span> Min </span>
+                </dt>
+                <dd class="col-sm-9" type="checkbox">
+                    @Html.DisplayFor(model => model.ValidationMin)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span> Message For Min Validation </span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ValidationMinMessage)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span> Max </span>
+                </dt>
+                <dd class="col-sm-9" type="checkbox">
+                    @Html.DisplayFor(model => model.ValidationMax)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span> Message For Max Validation </span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ValidationMaxMessage)
+                </dd>
+
+            </dl>
+        </div>
+
+    </div>
+</div>

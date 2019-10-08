@@ -1,0 +1,59 @@
+﻿@model Gather_Requirement_Project.Models.Portal
+
+@{
+    SelectList MainPortalsList = new SelectList(ViewBag.mainPortalsList, "ID", "ArabicName");
+    ViewData["Title"] = "Edit";
+
+    var i = 0; 
+}
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp Portal </h4>
+        </div>
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+                </div>
+                <div class="col-md-2">
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+            <hr />
+
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ID" />
+                        <div class="form-group">
+                            <label asp-for="EnglishName" class="control-label"></label>
+                            <input asp-for="EnglishName" class="form-control" />
+                            <span asp-validation-for="EnglishName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ArabicName" class="control-label"></label>
+                            <input asp-for="ArabicName" class="form-control" />
+                            <span asp-validation-for="ArabicName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MainPortalID" class="control-label">Main Portal</label>
+                            <select asp-for="MainPortalID" class="form-control" asp-items="MainPortalsList">
+                                <option disabled selected>--- SELECT ---</option>
+                            </select>
+                            <span asp-validation-for="MainPortalID" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

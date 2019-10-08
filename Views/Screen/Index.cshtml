@@ -1,0 +1,189 @@
+﻿@model IEnumerable<Gather_Requirement_Project.Models.Screen>
+
+@{
+    ViewData["Title"] = "Index";
+
+    int var = 1;
+
+}
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp Screens </h4>
+        </div>
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+                    <a asp-action="Create" asp-route-modulId='@ViewBag.ModID'>Create New Screen</a>
+                </div>
+                <div class="col-md-2">
+                    @foreach (var item in Model)
+                    {
+                        <a asp-controller="Modules" asp-action="Index" asp-route-programId="@item.Module.CustomerProgramID">Go to Back</a>
+                        break;
+                    }
+                </div>
+            </div>
+            <hr />
+
+            <table class="table table-bordered table-hover  table-responsive" id="dataTable" cellspacing="0">
+
+                <thead>
+                    <tr>
+                        <th>
+                            <span>#</span>
+                        </th>
+
+                        <th>
+                            <span>Screen Name</span>
+                        </th>
+                        <th>
+                            <span>Screen Name Arabic</span>
+                        </th>
+                        <th>
+                            <span>Employee Name</span>
+                        </th>
+                        @*<th>
+                                <span>Developer Name</span>
+                            </th>
+                            <th>
+                                <span>Date</span>
+                            </th>*@
+                        <th>
+                            <spn>Screen Type</spn>
+                        </th>
+                        <th>
+                            <span>Employee Job</span>
+                        </th>
+                        <th>
+                            <span>Operation</span>
+                        </th>
+
+                        <th>
+                            <span>Screen Components </span>
+                        </th>
+                        <th>
+                            <span>User Story </span>
+                        </th>
+                        <th>
+                            <span>Json ForentEnd</span>
+                        </th>
+                        <th>
+                            <span>Class</span>
+                        </th>
+                        <th>
+                            <span>Copy It</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @var
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ScreenName)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ScreenNameArabic)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpName)
+                            </td>
+                            @*<td>
+                                    @Html.DisplayFor(modelItem => item.DevName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ScreenTypes.Name)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpJob)
+                            </td>
+
+                            <td>
+                                <div class="row ">
+                                    <div class="col-3 mr-2">
+                                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary"><i class="fa fa-edit sizing"></i></a>
+                                    </div>
+                                    <div class="col-3 mr-2">
+                                        <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info"><i class="fa fa-book"></i></a>
+
+                                    </div>
+                                    <div class="col-3  ">
+                                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-trash "></i></a>
+                                    </div>
+                                </div>
+                            </td>
+
+
+                            <td>
+                                <div class="col-3 ">
+                                    <a asp-controller="ScreenComponent" asp-action="Index" asp-route-screenId="@item.ID" class="btn btn-warning"><i class="fa fa-desktop"></i></a>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="col-3 mr-2">
+                                    <a asp-controller="UserStories" asp-action="index" asp-route-screenId="@item.ID" class="btn btn-light"><i class="fa fa-microchip"></i></a>
+                                </div>
+                            </td>
+
+
+                            <td>
+                                <div class="row ">
+                                    <div class="col-3 mr-2">
+                                        <a asp-action="GenerateJson" asp-route-id="@item.ID" class="btn btn-success"><i class="fa fa-hand-pointer-o"></i></a>
+                                    </div>
+                                    <div class="col-3 mr-2">
+                                        @if (item.screenTypeID == 1)
+                                        {
+                                            <div class="col-3 mr-2">
+                                                <a asp-action="GenerateModelJson" asp-route-id="@item.ID" class="btn btn-success"><i class="fa fa-puzzle-piece"></i></a>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="row ">
+                                    @if (item.screenTypeID == 1)
+                                    {
+                                        <div class="col-3 mr-2">
+                                            <a asp-action="GenerateModelCS" asp-route-id="@item.ID" class="btn btn-success"><i class="fa fa-hand-pointer-o"></i></a>
+                                        </div>
+                                    }
+                                </div>
+                            </td>
+
+                                <td>
+                                    <div class="col-3 mr-2">
+                                        <a asp-action="CopyScreen" asp-route-id="@item.ID"  class="btn btn-info"><i class="fa fa-arrow-circle-down"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            var = var + 1;
+
+                        }
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+

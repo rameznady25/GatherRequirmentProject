@@ -1,0 +1,57 @@
+﻿@model Gather_Requirement_Project.Models.MainPortal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h4> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp MainPortal </h4>
+            </div>
+            <div class="card-body" style="">
+                <div class="row">
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-2">
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+                <hr />
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="EnglishName" class="control-label"></label>
+                                <input asp-for="EnglishName" class="form-control" />
+                                <span asp-validation-for="EnglishName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ArabicName" class="control-label"></label>
+                                <input asp-for="ArabicName" class="form-control" />
+                                <span asp-validation-for="ArabicName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+

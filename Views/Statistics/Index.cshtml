@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+
+    int var = 1;
+
+}
+
+
+
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header ">
+            <h4> <i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp&nbsp Statistics </h4>
+
+        </div>
+
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <hr />
+
+            <table class="table  table-bordered table-hover table-responsive" id="dataTable">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>#</span>
+                        </th>
+
+                        <th>
+                            <span>Developer</span>
+                        </th>
+                        <th>
+                            <span>Programs</span>
+                        </th>
+                        <th>
+                            <span>Modules</span>
+                        </th>
+                        <th>
+                            <span>Screens</span>
+                        </th>
+                        <th>
+                            <span>Screen Components</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i <= 100; i++)
+                    {
+                        <tr>
+                            <td>
+                                @var
+                            </td>
+                            <td> @ViewBag.Devs[@i]</td>
+                            <td> @ViewBag.programs[@i]</td>
+                            <td> @ViewBag.modules[@i]</td>
+                            <td> @ViewBag.screens[@i]</td>
+                            <td> @ViewBag.comp[@i]</td>
+                        </tr>
+                        var = var + 1;
+                        if (ViewBag.Length == @var) { break; }
+                    }
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+    //For ref : https://stackoverflow.com/questions/484463/how-do-i-maintain-scroll-position-in-mvc
+    $(document).scroll(function () {
+        localStorage['page'] = document.URL;
+        localStorage['scrollTop'] = $(document).scrollTop();
+    });
+
+    $(document).ready(function () {
+        if (localStorage['page'] == document.URL) {
+            $(document).scrollTop(localStorage['scrollTop']);
+        }
+    });
+</script>

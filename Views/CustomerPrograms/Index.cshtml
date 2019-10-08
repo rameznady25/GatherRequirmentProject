@@ -1,0 +1,151 @@
+﻿@model IEnumerable<Gather_Requirement_Project.Models.CustomerProgram>
+
+    @{
+    ViewData["Title"] = "Index";
+
+    int var = 1;
+    }
+
+
+
+
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-header ">
+                <h4> <i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp&nbsp Program </h4>
+
+            </div>
+
+            <div class="card-body" style="">
+                <div class="row">
+                    <div class="col-md-10">
+                        <a asp-action="Create">Create New Program</a>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+                <hr />
+
+                <table class="table  table-bordered table-hover table-responsive" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>#</span>
+                            </th>
+
+                            <th>
+                                <span>Program Name in English</span>
+                            </th>
+                            <th>
+                                <span>Program Name in Arabic</span>
+                            </th>
+                            <th>
+                                <span>Section</span>
+                            </th>
+                            <th>
+                                <span>Developer Name</span>
+                            </th>
+                            <th>
+                                <span>Date</span>
+                            </th>
+                            <th>
+                                <span>Modules</span>
+                            </th>
+                            <th>
+                                <span> </span>
+                            </th>
+
+                            <th>
+                                <span>SRS</span>
+                            </th>
+                            <th>
+                                <span>json nav</span>
+                            </th>
+                            <th>
+                                <span>Copy IT</span>
+                            </th>
+                            <th>
+                                <span> Classes </span>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @var
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnglishNameInSingle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ArabicNameInSingle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Section.EnglishName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DevName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+
+                            <td>
+                                <a asp-controller="Modules" asp-action="Index" asp-route-programId="@item.ID" class="btn btn-warning"><i class="fa fa-desktop"></i></a>
+                            </td>
+
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info"><i class="fa fa-book"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                @*<a asp-action="GenerateSQL" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-file"></i></a>*@
+                                @*<a asp-action="GenerateJson" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-file"></i></a>*@
+                            </td>
+
+
+                            <td>
+                                <a asp-action="GenerateSRS" asp-route-id="@item.ID" class="btn btn-success"><i class="fa fa-hand-pointer-o"></i></a>
+                            </td>
+
+                            <td>
+                                <a asp-action="GenerateJsonFrontEnd" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-hand-lizard"></i></a>
+                            </td>
+
+                            <td>
+                                <a asp-action="CopyProgram" asp-route-id="@item.ID" class="btn btn-info"><i class="fa fa-arrow-circle-down"></i></a>
+                            </td>
+                            <td>
+                                <a asp-action="CreateZipFile3" asp-route-Id="@item.ID" class="btn btn-danger"><i class="fa fa-hand-point-down"></i></a>
+                            </td>
+                        </tr>
+                        var = var + 1;
+                        }
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+
+        //For ref : https://stackoverflow.com/questions/484463/how-do-i-maintain-scroll-position-in-mvc
+        $(document).scroll(function () {
+            localStorage['page'] = document.URL;
+            localStorage['scrollTop'] = $(document).scrollTop();
+        });
+
+        $(document).ready(function () {
+            if (localStorage['page'] == document.URL) {
+                $(document).scrollTop(localStorage['scrollTop']);
+            }
+        });
+    </script>

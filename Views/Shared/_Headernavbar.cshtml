@@ -1,0 +1,150 @@
+﻿
+@*@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager;
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+    </div>
+    <div class="card-body" style="">
+
+        <p>
+            <a asp-action="Create">Create New Screen Component</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <spn>Screen Name</spn>
+
+                    </th>
+                    <th>
+                        <span>اسم الحقل بالانجليزى </span>
+
+                    </th>
+                    <th>
+                        <span>اسم الحقل بالعربى </span>
+
+                    </th>
+                    <th>
+                        <span>Input Type </span>
+
+                    </th>
+                    <th>
+                        <span>Field Type </span>
+
+                    </th>
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Screen.ScreenName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FieldNameEnglish)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FielNameArabic)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InputType.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FieldType.Name)
+                        </td>
+
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                            <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info"><i class="fa fa-book"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</div>  <div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+    </div>
+    <div class="card-body" style="">
+
+        <p>
+            <a asp-action="Create">Create New Screen Component</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <spn>Screen Name</spn>
+
+                    </th>
+                    <th>
+                        <span>اسم الحقل بالانجليزى </span>
+
+                    </th>
+                    <th>
+                        <span>اسم الحقل بالعربى </span>
+
+                    </th>
+                    <th>
+                        <span>Input Type </span>
+
+                    </th>
+                    <th>
+                        <span>Field Type </span>
+
+                    </th>
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Screen.ScreenName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FieldNameEnglish)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FielNameArabic)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InputType.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FieldType.Name)
+                        </td>
+
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                            <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info"><i class="fa fa-book"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</div>*@ 

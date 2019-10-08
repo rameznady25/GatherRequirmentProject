@@ -1,0 +1,102 @@
+﻿@model Gather_Requirement_Project.Models.CustomerProgram
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager;
+
+@{
+    ViewData["Title"] = "Create";
+    SelectList SectionsList = new SelectList(ViewBag.portalsList, "ID", "ArabicName");
+
+}
+
+<div class="container">
+    <div class="card ">
+        <div class="card-header">
+            <h4> <i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp&nbsp Create New Program </h4>
+        </div>
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+
+                </div>
+                <div class="col-md-2">
+                    <a asp-action="Index">Go to Back</a>
+                </div>
+            </div>
+            <hr />
+
+            <div class="text-md-left row">
+                <div class="col-md-4">
+                    <form asp-action="Create" asp-controller="CustomerProgram" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="EnglishNameInSingle" class="control-label">Program English Name In Single</label>
+                            <input asp-for="EnglishNameInSingle" class="form-control" />
+                            <span asp-validation-for="EnglishNameInSingle" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="EnglishNameInPlural" class="control-label">Program English Name In Plural</label>
+                            <input asp-for="EnglishNameInPlural" class="form-control" />
+                            <span asp-validation-for="EnglishNameInPlural" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ArabicNameInSingle" class="control-label">Program Arabic Name In Single</label>
+                            <input asp-for="ArabicNameInSingle" class="form-control" />
+                            <span asp-validation-for="ArabicNameInSingle" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ArabicNameInPlural" class="control-label">Program Arabic Name In Plural</label>
+                            <input asp-for="ArabicNameInPlural" class="form-control" />
+                            <span asp-validation-for="ArabicNameInPlural" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="URLForService" class="control-label">Program URL For Service</label>
+                            <input asp-for="URLForService" class="form-control" />
+                            <span asp-validation-for="URLForService" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SectionID" class="control-label">Section</label>
+                            <select asp-for="SectionID" class="form-control" asp-items="SectionsList">
+                                <option disabled selected>--- SELECT ---</option>
+                            </select>
+                            <span asp-validation-for="SectionID" class="text-danger"></span>
+                        </div>
+
+                        <div>
+                            <label class="form-label-group" asp-for="DevName" class="control-label"><b>Developer Name</b></label>
+                            <input asp-for="DevName" class="form-control" value="@User.Identity.Name" />
+                            <span asp-validation-for="DevName" class="text-danger"></span>
+                        </div>
+
+
+                        <br />
+
+                        <div>
+                            <label class="form-label-group" asp-for="Date" class="control-label"><b>Date</b>  </label>
+                            <input asp-for="Date" class="form-control" type="Date" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+
+                        <br />
+
+
+                        <div class="form-group">
+                            <input type="submit" value="create" class="btn btn-primary" />
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,115 @@
+﻿@model Gather_Requirement_Project.Models.Screen
+
+@{
+    ViewData["Title"] = "Details";
+    //string str = "~/Images/" + "20190803-Screenshot_25.png";
+}
+
+<div class="container-fluid">
+    <div class="card mb-3  border">
+      
+        <div class="row card-header">
+            <div class="col-md-10">
+                <h4>  <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp Details of Screen </h4>
+            </div>
+            <div class="col-md-2">
+                <a asp-action="Index" asp-route-modulId="@Model.ModuleID" >Go to Back</a>
+            </div>
+        </div>
+
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+
+                </div>
+
+                <div class="col-md-2">
+                    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+
+                </div>
+            </div>
+            <hr />
+            <dl class="text-md-left   table-bordered table-hover row">
+
+                <dt class="col-sm-3">
+                    <span>Screen Name</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ScreenName)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span>Screen Name Arabic</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ScreenNameArabic)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span>Program of Screen</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Module.EnglishNameInSingle)
+                </dd>
+
+                <dt class="col-sm-3">
+
+                    <span>Screen Type</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ScreenTypes.Name)
+                </dd>
+
+                @*<dt class="col-sm-3">
+            <span>Screen Goal</span>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ScreenGoal)
+        </dd>*@
+
+                <dt class="col-sm-3">
+                    <span>Employee Name</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.EmpName)
+                </dd>
+
+                <dt class="col-sm-3">
+                    <span> Employee Job</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.EmpJob)
+                </dd>
+
+                @*<dt class="col-sm-3">
+                    <span>Developer Name</span>
+                </dt>
+               <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.DevName)
+                </dd>
+                <dt class="col-sm-2">
+                    <span>Date</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Date)
+                </dd>*@
+ 
+
+
+                <dt class="col-sm-3">
+                    <span>Image For Screen</span>
+                </dt>
+                <dd class="col-sm-9">
+                    @*@Html.DisplayFor(model => model.ImageName)*@ <br />
+                    <img src="~/Images/@Html.DisplayFor(model => model.ImageName)" alt="Image" style="height:70px;width:70px;" />
+                </dd>
+
+
+
+            </dl>
+        </div>
+
+    </div>
+        
+    </div>
+

@@ -1,0 +1,295 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager;
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gather_Requirement_Project</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <header>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+                <a class="navbar-brand mr-1" asp-area="" asp-controller="CustomerPrograms" asp-action="Index">Gather Requirement tool</a>
+                <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- Navbar Search -->
+                <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Navbar -->
+                <ul class="navbar-nav ml-auto ml-md-0">
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @User.Identity.Name<i class="fas fa-user-circle fa-fw"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">profile</a>
+                                <a class="dropdown-item" href="#">tasks</a>
+                                <div class="dropdown-divider"></div>
+                                <form method="post" asp-action="Logout" asp-controller="Account">
+                                    <button type="submit" class="nav-link btn btn-link py-0" style="width:auto;color:black">
+                                        Logout
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                    else
+                    {
+                        <!--
+                             <li class="nav-item">
+                             <a class="nav-link text-dark nav-" asp-area="" asp-controller="Account" asp-action="Register">
+                                 Register
+                             </a>
+                         </li>
+                        -->
+                        <li class="nav-item">
+                            <a class="nav-link text-dark nav-" asp-area="" asp-controller="Account" asp-action="Login">
+                                Login
+                            </a>
+                        </li>
+                    }
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"></i>
+                            @*<span class="badge badge-danger">9+</span>*@
+                        </a>
+                        @*<div class="dropdown-menu dropdown-menu-left" aria-labelledby="alertsDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>*@
+                    </li>
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-envelope fa-fw"></i>
+                            @*<span class="badge badge-danger">7</span>*@
+                        </a>
+                        @*<div class="dropdown-menu dropdown-menu-left" aria-labelledby="messagesDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>*@
+                    </li>
+
+
+                </ul>
+
+            </nav>
+
+        }
+
+    </header>
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        @if (User.Identity.IsAuthenticated)
+        {
+        <ul class="sidebar navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="MainPortals" asp-action="Index">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    <span>
+                        Main Portals
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Portals" asp-action="Index">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    <span>
+                        Portals
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Sections" asp-action="Index">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    <span>
+                        Section
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="CustomerPrograms" asp-action="Index">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    <span>
+                        Programs
+                    </span>
+                </a>
+            </li>
+
+
+            @*
+                 <li class="nav-item">
+                     <a class="nav-link text-light" asp-area="" asp-controller="Modules" asp-action="Index">
+                         <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                         <span>
+                             Modules
+                         </span>
+                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link text-light" asp-area="" asp-controller="Screen" asp-action="Index">
+                         <i class="fa fa-desktop" aria-hidden="true"></i>
+                         <span>
+                             Screens
+                         </span>
+                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a class="nav-link text-light" asp-area="" asp-controller="ScreenComponent" asp-action="Index">
+                         <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                         <span>
+                             Screen Compoment
+
+                         </span>
+                     </a>
+                 </li>
+        /*@
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="CustomerPrograms" asp-action="ScriptAllProgram2">
+                    <i class="fas fa-fw fa-table"></i>
+                    SRS_TXT
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="CustomerPrograms" asp-action="GenerateWord">
+                    <i class="fas fa-fw fa-table"></i>
+                    SRS_Word
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="CustomerPrograms" asp-action="GenerateSQLAll">
+                    <i class='fa fa-file-text-o'></i>
+                    Script
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="CustomerPrograms" asp-action="CreateZipFile2">
+                    <i class='fa fa-file-zip-o'></i>
+                    ZipFileForLookup
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="CustomerPrograms" asp-action="UserstoryReport">
+                    <i class='fa fa-file-zip-o'></i>
+                    StatusForUserStory
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="CustomerPrograms" asp-action="ScriptAllProgram3">
+                    <i class='fa fa-file-zip-o'></i>
+                    Navigation
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Statistics" asp-action="Index">
+                    <i class='fa fa-file-zip-o'></i>
+                    Statistics
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="MainPortals" asp-action="ListAllPrograms">
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    <span>
+                        All Programs
+                    </span>
+                </a>
+            </li>
+
+
+        </ul>}
+
+        <div id="content-wrapper">
+
+
+            @RenderBody()
+
+
+
+
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+
+    <!-- /#wrapper -->
+
+
+
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

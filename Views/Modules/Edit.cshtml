@@ -1,0 +1,86 @@
+﻿@model Gather_Requirement_Project.Models.Module
+
+@{
+    ViewData["Title"] = "Edit";
+        SelectList ProgramList = new SelectList(ViewBag.programList, "ID", "EnglishNameInSingle", ViewBag.programList);
+
+}
+<div class="card ">
+    <div class="card-header">
+        <h4> <i class="fas fa-table"></i>&nbsp&nbsp EditProgram </h4>
+    </div>
+    <div class="card-body" style="">
+        <div class="row">
+            <div class="col-md-10">
+
+            </div>
+            <div class="col-md-2">
+                <a asp-action="Index" asp-route-programId="@Model.CustomerProgramID" >Go to Back</a>
+            </div>
+        </div>
+        <hr />
+
+        <div class="text-md-left row">
+            <div class="col-md-6 jumbotron">
+                <form asp-action="Edit" asp-controller="Modules" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ID" />
+
+                    <div class="form-group">
+                        <label class="form-dropdown-group" asp-for="CustomerProgramID"><b>Program</b></label><br />
+                        <select id="sel" hidden asp-for="CustomerProgramID" class="form-control" asp-items="ProgramList"></select>
+                        <label id="lbl" class="form-label-group"></label>
+                        <span asp-validation-for="CustomerProgramID" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="EnglishNameInSingle" class="control-label">Module English Name In Single</label>
+                        <input asp-for="EnglishNameInSingle" class="form-control" />
+                        <span asp-validation-for="EnglishNameInSingle" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="EnglishNameInPlural" class="control-label">Module English Name In Plural</label>
+                        <input asp-for="EnglishNameInPlural" class="form-control" />
+                        <span asp-validation-for="EnglishNameInPlural" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="EnglishNameInSingle" class="control-label">Module Arabic Name In Single</label>
+                        <input asp-for="ArabicNameInSingle" class="form-control" />
+                        <span asp-validation-for="ArabicNameInSingle" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="EnglishNameInPlural" class="control-label">Module Arabic Name In Plural</label>
+                        <input asp-for="ArabicNameInPlural" class="form-control" />
+                        <span asp-validation-for="ArabicNameInPlural" class="text-danger"></span>
+
+
+                        <label asp-for="URLForService" class="control-label">Module URL For Service</label>
+                        <input asp-for="URLForService" class="form-control" />
+                        <span asp-validation-for="URLForService" class="text-danger"></span>
+                        <br />
+
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="حفظ التعديل" class="btn btn-primary" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    $(document).ready(function () {
+        $("#lbl").empty();
+        $("#lbl").append( ($("#sel").children("option:selected").text()) );
+    });
+</script>

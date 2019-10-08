@@ -1,0 +1,44 @@
+﻿@model Gather_Requirement_Project.Models.UserStories
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp Create User Story </h4>
+        </div>
+        <div class="card-body" style="">
+
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Create" method="post" asp-controller="UserStories">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Requirement" class="control-label"></label>
+                            <textarea asp-for="Requirement" class="form-control"></textarea>
+                            <span asp-validation-for="Requirement" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UserStory" class="control-label"></label>
+                            <textarea asp-for="UserStory" class="form-control"></textarea>
+                            <span asp-validation-for="UserStory" class="text-danger"></span>
+                        </div>
+
+                        <input type="hidden" asp-for="ScreenID" class="form-control" value="@ViewBag.ScID" />
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a asp-action="Index" asp-route-screenId="@ViewBag.ScID ">Back to List</a>
+            </div>
+
+        </div>
+    </div>
+</div>

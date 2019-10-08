@@ -1,0 +1,61 @@
+﻿@model Gather_Requirement_Project.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<div class="container-fluid" style="background-color:darkslategray;min-height:700px;">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card card-login mx-auto mt-5">
+                <div class="card-header">Login</div>
+                <div class="card-body">
+                    <form asp-action="Login" asp-controller="Account" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="DeveloperName" class="control-label"></label>
+                            <input asp-for="DeveloperName" class="form-control" />
+                            <span asp-validation-for="DeveloperName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="RememberMe" />
+                                <br />
+                                @Html.DisplayNameFor(model => model.RememberMe)
+                            </label>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn btn-primary " />
+
+                        </div>
+                    </form>
+                    @*<div class="text-center">
+                            <a class="d-block small mt-3" href="register.html">Register an Account</a>
+                            <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                      </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

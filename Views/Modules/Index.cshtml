@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Gather_Requirement_Project.Models.Module>
+
+@{
+    ViewData["Title"] = "Index";
+    int var = 1;
+
+}
+
+
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header ">
+            <h4> <i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp&nbsp Module </h4>
+
+        </div>
+
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+                    <a asp-action="Create" asp-route-programId='@ViewBag.ProID'>New Module</a>
+                </div>
+                <div class="col-md-2">
+                    <a asp-controller="CustomerPrograms" asp-action="Index">Go to Back</a>
+                </div>
+            </div>
+            <hr />
+
+
+            <table class="table  table-bordered table-hover  table-responsive" id="dataTable">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>#</span>
+                        </th>
+                        <th>
+                            <span>Module Name in English</span>
+                        </th>
+                        <th>
+                            <span>Module Name in Arabic</span>
+                        </th>
+                        <th>
+                            <span>Screens</span>
+                        </th>
+                        <th>
+                            <span> </span>
+                        </th>
+                        <th>
+                            <span> Lookup </span>
+                        </th>
+                        <th>
+                            <span> CopyIT </span>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                @var
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnglishNameInSingle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ArabicNameInSingle)
+                            </td>
+
+                            <td>
+                                <a asp-controller="Screen" asp-action="Index" asp-route-modulId="@item.ID" class="btn btn-warning"><i class="fa fa-desktop"></i></a>
+                            </td>
+
+
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info"><i class="fa fa-book"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                @*<a asp-action="GenerateSQL" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-file"></i></a>*@
+                                @*<a asp-action="GenerateJson" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-file"></i></a>*@
+                            </td>
+
+                            <td>
+                                <a asp-action="CreateZipFile2" asp-route-Id="@item.ID" class="btn btn-danger"><i class="fa fa-arrow-circle-up"></i></a>
+                            </td>
+
+                            <td>
+                                <a asp-action="CopyModule" asp-route-Id="@item.ID" class="btn btn-info"><i class="fa fa-arrow-circle-down"></i></a>
+                            </td>
+
+
+                        </tr>
+                        var = var + 1;
+
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    $(document).scroll(function () {
+        localStorage['page'] = document.URL;
+        localStorage['scrollTop'] = $(document).scrollTop();
+    });
+
+    $(document).ready(function () {
+        if (localStorage['page'] == document.URL) {
+            $(document).scrollTop(localStorage['scrollTop']);
+        }
+    });
+</script>
+

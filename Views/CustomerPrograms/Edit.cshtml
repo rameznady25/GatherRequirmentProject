@@ -1,0 +1,89 @@
+﻿@model Gather_Requirement_Project.Models.CustomerProgram
+
+@{
+    ViewData["Title"] = "Edit";
+    SelectList SectionsList = new SelectList(ViewBag.portalsList, "ID", "EnglishName");
+
+}
+<div class="card ">
+    <div class="card-header">
+        <h4> <i class="fas fa-table"></i>&nbsp&nbsp Edit Program </h4>
+    </div>
+    <div class="card-body" style="">
+        <div class="row">
+            <div class="col-md-10">
+
+            </div>
+            <div class="col-md-2">
+                <a asp-action="Index">Go to Back</a>
+            </div>
+        </div>
+        <hr />
+
+        <div class="text-md-left row">
+            <div class="col-md-6 jumbotron">
+                <form asp-action="Edit" asp-controller="CustomerPrograms" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ID" />
+
+                    <div class="form-group">
+                        <label asp-for="EnglishNameInSingle" class="control-label">Program English Name In Single</label>
+                        <input asp-for="EnglishNameInSingle" class="form-control" />
+                        <span asp-validation-for="EnglishNameInSingle" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="EnglishNameInPlural" class="control-label">Program English Name In Plural</label>
+                        <input asp-for="EnglishNameInPlural" class="form-control" />
+                        <span asp-validation-for="EnglishNameInPlural" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="EnglishNameInSingle" class="control-label">Program Arabic Name In Single</label>
+                        <input asp-for="ArabicNameInSingle" class="form-control" />
+                        <span asp-validation-for="ArabicNameInSingle" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="EnglishNameInPlural" class="control-label">Program Arabic Name In Plural</label>
+                        <input asp-for="ArabicNameInPlural" class="form-control" />
+                        <span asp-validation-for="ArabicNameInPlural" class="text-danger"></span>
+                        <br />
+
+                        <label asp-for="URLForService" class="control-label">Program URL For Service</label>
+                        <input asp-for="URLForService" class="form-control" />
+                        <span asp-validation-for="URLForService" class="text-danger"></span>
+                        <br />
+
+                        <div class="form-group">
+                            <label asp-for="SectionID" class="control-label">Section</label>
+                            <select asp-for="SectionID" class="form-control" asp-items="SectionsList">
+                                <option disabled selected>--- SELECT ---</option>
+                            </select>
+                            <span asp-validation-for="SectionID" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <label asp-for="DevName" class="control-label"><b>Developer Name</b></label>
+                            <input asp-for="DevName" class="form-control" />
+                            <span asp-validation-for="DevName" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <label asp-for="Date" class="control-label"><b>Date</b></label>
+                            <input asp-for="Date" class="form-control" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="حفظ التعديل" class="btn btn-primary" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,97 @@
+﻿@model Gather_Requirement_Project.Models.CustomerProgram
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card ">
+    <div class="card-header">
+        <h4> <i class="fas fa-table"></i>&nbsp&nbsp Details Program </h4>
+    </div>
+    <div class="card-body" style="">
+        <div class="row">
+            <div class="col-md-10">
+
+            </div>
+            <div class="col-md-2">
+                <a asp-action="Index">go to Back</a>
+            </div>
+        </div>
+        <hr />
+
+
+
+        <dl class="text-md-left  row">
+            <dt class="col-sm-3">
+                <span>Program English Name In Single</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EnglishNameInSingle)
+            </dd>
+
+            <dt class="col-sm-3">
+                <span>Program English Name In Plural</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EnglishNameInPlural)
+            </dd>
+
+            <dt class="col-sm-3">
+                <span>Program Arabic Name In Single</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ArabicNameInSingle)
+            </dd>
+
+
+            <dt class="col-sm-3">
+                <span>Program Arabic Name In Plural</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ArabicNameInPlural)
+            </dd>
+
+            <dt class="col-sm-3">
+                <span>Section</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Section.EnglishName)
+            </dd>
+
+            <dt class="col-sm-3">
+                <span>Program URL For Service</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.URLForService)
+            </dd>
+
+            <dt class="col-sm-3">
+                <span>Developer Name</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DevName)
+            </dd>
+
+
+            <dt class="col-sm-3">
+                <span>Data</span>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+        </dl>
+
+
+        <dl class="col-sm-5">
+            <b><a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> </b>
+        </dl>
+
+
+
+    </div>
+    <div>
+       
+        
+    </div>
+    </div>

@@ -1,0 +1,56 @@
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\bin\Debug\netcoreapp2.2\Gather Requirement Project.deps.json
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\bin\Debug\netcoreapp2.2\Gather Requirement Project.runtimeconfig.json
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\bin\Debug\netcoreapp2.2\Gather Requirement Project.runtimeconfig.dev.json
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\bin\Debug\netcoreapp2.2\Gather Requirement Project.dll
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\bin\Debug\netcoreapp2.2\Gather Requirement Project.pdb
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\bin\Debug\netcoreapp2.2\Gather Requirement Project.Views.dll
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\bin\Debug\netcoreapp2.2\Gather Requirement Project.Views.pdb
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.csproj.CoreCompileInputs.cache
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorAssemblyInfo.cache
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorAssemblyInfo.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.AssemblyInfoInputs.cache
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.AssemblyInfo.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.TagHelpers.input.cache
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.TagHelpers.output.cache
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorCoreGenerate.cache
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Create.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Delete.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Details.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Edit.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Index.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Create.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Delete.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Details.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Edit.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Index.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Create.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Details.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Edit.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Index.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Create.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Details.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Edit.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Index.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Headernavbar.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Create.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Delete.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Details.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Edit.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Index.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorTargetAssemblyInfo.cache
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorTargetAssemblyInfo.cs
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.Views.pdb
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.dll
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.pdb
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.csproj.CopyComplete
+E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.csprojAssemblyReference.cache

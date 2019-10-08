@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Gather_Requirement_Project.Models.Section>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp&nbsp Section </h4>
+        </div>
+        <div class="card-body" style="">
+            <div class="row">
+                <div class="col-md-10">
+                    <a asp-action="Create">Create New</a>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <hr />
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EnglishName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ArabicName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Portal)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnglishName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ArabicName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Portal.ArabicName)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

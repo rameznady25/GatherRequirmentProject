@@ -1,0 +1,128 @@
+﻿@model IEnumerable<Gather_Requirement_Project.Models.ScreenComponent>
+
+@{
+    ViewData["Title"] = "Index";
+    int var = 1;
+
+}
+
+<!-- /.container-fluid -->
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4> <i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp&nbsp ScreenComponents </h4>
+        </div>
+        <div class="card-body" style="">
+
+            <p>
+            </p>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <a asp-action="Create" asp-route-screenId="@ViewBag.screenId">Create New Screen Component</a>
+                </div>
+                <div class="col-md-2">
+                    @foreach (var item in Model)
+                    {
+                        <a asp-controller="Screen" asp-action="Index" asp-route-modulId="@item.Screen.ModuleID">Go to Back</a>
+                        break;
+                    }
+                </div>
+            </div>
+            <hr />
+
+            <table class="table table table-bordered table-hover  table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>#</span>
+                        </th>
+
+                        <th>
+                            <spn>Screen Name</spn>
+
+                        </th>
+                        <th>
+                            <span> Field Name English  </span>
+
+                        </th>
+                        <th>
+                            <span>Field Name Arabic </span>
+
+                        </th>
+                        <th>
+                            <span>Input Type </span>
+
+                        </th>
+                        <th>
+                            <span>Field Type </span>
+
+                        </th>
+
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @var
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Screen.ScreenName)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FieldNameEnglish)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FielNameArabic)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InputType.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FieldType.Name)
+                            </td>
+
+
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info"><i class="fa fa-book"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        var = var + 1;
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+    @*<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>*@
+
+</div>
+
+
+
+
+
+
+<script>
+    $(document).scroll(function () {
+        localStorage['page'] = document.URL;
+        localStorage['scrollTop'] = $(document).scrollTop();
+    });
+
+    $(document).ready(function () {
+        if (localStorage['page'] == document.URL) {
+            $(document).scrollTop(localStorage['scrollTop']);
+        }
+    });
+</script>
+
