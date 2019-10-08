@@ -1344,7 +1344,7 @@ namespace LookUpTable.Controllers
             if (finalResult == null || !finalResult.Any())
                 throw new Exception(String.Format("No Files found with Image"));
 
-            return File(finalResult, "application/zip", "ClassesFor_"+ pro.EnglishNameInSingle.Replace(" ","")+".zip");
+            return File(finalResult, "application/zip", "ClassesFor_" + pro.EnglishNameInSingle.Replace(" ", "") + ".zip");
 
 
         }
@@ -1429,8 +1429,58 @@ public int Id { get; set; }
 
 
 
+        public IActionResult ScriptAllProgram4()
+        {
+            IEnumerable<CustomerProgram> pros = context.CustomerPrograms.ToList();
+            StringBuilder report = new StringBuilder("");
+            foreach (var pro in pros)
+            {
+                IEnumerable<Module> mods = context.Modules.Where(m => m.CustomerProgramID == pro.ID);
+                foreach (var mod in mods)
+                {
+                    report.Append(pro.ArabicNameInPlural);
+                    report.Append("\t");
+
+                    report.Append((mod.ArabicNameInSingle));
+                    report.Append("\t");
+
+                    //IEnumerable<Screen> scs = context.Screens.Where(m => m.ModuleID == mod.ID).Count();
+                    report.Append(context.Screens.Where(m => m.ModuleID == mod.ID).Count());
+                    report.Append("\n");
+                }
+            }
 
 
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(report.ToString()));
+            return new FileStreamResult(stream, new MediaTypeHeaderValue("text/plain"))
+            {
+                FileDownloadName = "report.txt"
+            };
+        }
+
+
+        public IActionResult ScriptAllProgram5()
+        {
+            IEnumerable<CustomerProgram> pros = context.CustomerPrograms.ToList();
+            StringBuilder report = new StringBuilder("");
+            foreach (var pro in pros)
+            {
+                report.Append(pro.ArabicNameInSingle);
+                report.Append("\t");
+                report.Append((pro.Date).ToString("dd/MM/yyyy"));
+                report.Append("\t");
+                report.Append((pro.Date).ToString("dddd"));
+                report.Append("\n");
+
+            }
+
+
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(report.ToString()));
+            return new FileStreamResult(stream, new MediaTypeHeaderValue("text/plain"))
+            {
+                FileDownloadName = "report.txt"
+            };
+        }
 
 
         /*
