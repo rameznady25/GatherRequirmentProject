@@ -54,3 +54,76 @@ E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcore
 E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.pdb
 E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.csproj.CopyComplete
 E:\Excel System Work\9-9-2019\05\05\Gather Requirement Project\obj\Debug\netcoreapp2.2\Gather Requirement Project.csprojAssemblyReference.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\bin\Debug\netcoreapp2.2\Gather Requirement Project.deps.json
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\bin\Debug\netcoreapp2.2\Gather Requirement Project.runtimeconfig.json
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\bin\Debug\netcoreapp2.2\Gather Requirement Project.runtimeconfig.dev.json
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\bin\Debug\netcoreapp2.2\Gather Requirement Project.dll
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\bin\Debug\netcoreapp2.2\Gather Requirement Project.pdb
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\bin\Debug\netcoreapp2.2\Gather Requirement Project.Views.dll
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\bin\Debug\netcoreapp2.2\Gather Requirement Project.Views.pdb
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.csprojAssemblyReference.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.csproj.CoreCompileInputs.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorAssemblyInfo.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorAssemblyInfo.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.AssemblyInfoInputs.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.AssemblyInfo.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.TagHelpers.input.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.TagHelpers.output.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorCoreGenerate.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Delete.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\CustomerPrograms\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\MainPortals\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\MainPortals\Delete.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\MainPortals\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\MainPortals\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\MainPortals\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\MainPortals\ListAllPrograms.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Delete.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Modules\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Portals\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Portals\Delete.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Portals\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Portals\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Portals\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\ScreenComponent\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Screen\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Sections\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Sections\Delete.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Sections\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Sections\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Sections\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Headernavbar.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\Statistics\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Create.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Delete.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Details.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Edit.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\UserStories\Index.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorTargetAssemblyInfo.cache
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.RazorTargetAssemblyInfo.cs
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.Views.pdb
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.dll
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.pdb
+C:\Users\software team\Desktop\gitRepo\GatherRequirmentProject\obj\Debug\netcoreapp2.2\Gather Requirement Project.csproj.CopyComplete

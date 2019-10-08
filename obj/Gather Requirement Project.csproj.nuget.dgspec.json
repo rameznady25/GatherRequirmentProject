@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "G:\\01\\04\\Gather Requirement Project\\Gather Requirement Project.csproj": {}
+    "C:\\Users\\software team\\Desktop\\gitRepo\\GatherRequirmentProject\\Gather Requirement Project.csproj": {}
   },
   "projects": {
-    "G:\\01\\04\\Gather Requirement Project\\Gather Requirement Project.csproj": {
+    "C:\\Users\\software team\\Desktop\\gitRepo\\GatherRequirmentProject\\Gather Requirement Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\01\\04\\Gather Requirement Project\\Gather Requirement Project.csproj",
+        "projectUniqueName": "C:\\Users\\software team\\Desktop\\gitRepo\\GatherRequirmentProject\\Gather Requirement Project.csproj",
         "projectName": "Gather Requirement Project",
-        "projectPath": "G:\\01\\04\\Gather Requirement Project\\Gather Requirement Project.csproj",
-        "packagesPath": "C:\\Users\\Software Team 1\\.nuget\\packages\\",
-        "outputPath": "G:\\01\\04\\Gather Requirement Project\\obj\\",
+        "projectPath": "C:\\Users\\software team\\Desktop\\gitRepo\\GatherRequirmentProject\\Gather Requirement Project.csproj",
+        "packagesPath": "C:\\Users\\software team\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\software team\\Desktop\\gitRepo\\GatherRequirmentProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Software Team 1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\software team\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
